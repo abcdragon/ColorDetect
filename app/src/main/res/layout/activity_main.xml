@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="uk.hello.org.colordetect.MainActivity">
+    <TextView
+        android:id="@+id/correctText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="맞은 개수"
+        app:layout_constraintBottom_toTopOf="@id/nowLevel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/nowLevelText" />
+    <TextView
+        android:id="@+id/correntCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="0"
+        app:layout_constraintLeft_toLeftOf="@id/correctText"
+        app:layout_constraintRight_toRightOf="@id/correctText"
+        app:layout_constraintTop_toBottomOf="@id/correctText" />
+
+    <TextView
+        android:id="@+id/nowLevelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="현재 레벨"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@id/correctText"
+        app:layout_constraintRight_toLeftOf="@id/ChanceText"/>
+    <TextView
+        android:id="@+id/nowLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        app:layout_constraintLeft_toLeftOf="@id/nowLevelText"
+        app:layout_constraintRight_toRightOf="@id/nowLevelText"
+        app:layout_constraintTop_toBottomOf="@id/nowLevelText" />
+
+    <TextView
+        android:id="@+id/ChanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="남은 기회"
+        app:layout_constraintLeft_toRightOf="@id/nowLevelText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/nowLevel" />
+    <TextView
+        android:id="@+id/ChanceCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        app:layout_constraintLeft_toLeftOf="@id/ChanceText"
+        app:layout_constraintRight_toRightOf="@id/ChanceText"
+        app:layout_constraintTop_toBottomOf="@id/ChanceText" />
+
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButton"
+        app:layout_constraintBottom_toBottomOf="@+id/btn2"
+        app:layout_constraintRight_toLeftOf="@+id/btn2" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButton"
+        app:layout_constraintBottom_toTopOf="@id/btn5"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButton"
+        app:layout_constraintBottom_toBottomOf="@+id/btn2"
+        app:layout_constraintLeft_toRightOf="@+id/btn2" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButton"
+        app:layout_constraintBottom_toBottomOf="@+id/btn5"
+        app:layout_constraintRight_toLeftOf="@+id/btn5" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButton"
+        app:layout_constraintBottom_toTopOf="@+id/btn8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButton"
+        app:layout_constraintBottom_toBottomOf="@+id/btn5"
+        app:layout_constraintLeft_toRightOf="@+id/btn5" />
+
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButton"
+        app:layout_constraintBottom_toBottomOf="@+id/btn8"
+        app:layout_constraintRight_toLeftOf="@id/btn8" />
+
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:onClick="onClickButton"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButton"
+        app:layout_constraintBottom_toBottomOf="@+id/btn8"
+        app:layout_constraintLeft_toRightOf="@+id/btn8" />
+</android.support.constraint.ConstraintLayout>
