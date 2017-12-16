@@ -1,13 +1,9 @@
 package uk.hello.org.colordetect;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Handler;
-import android.os.Message;
 import android.os.Vibrator;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -59,18 +55,19 @@ public class MainActivity extends AppCompatActivity {
     }
     // 저장용 + 버튼 크기 재설정
 
+    public void initColor(){}
+
+    // 잘못 눌렀을 경우
     public void wrongClick(){
         new Thread(new Runnable() {
             @Override
             public void run() {
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(WRONG));
                 int second = 0;
-
                 while(second <= 500){
                     try{
                         if(onVibrator){
                             Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
                             assert vibrator != null;
                             vibrator.vibrate(1);
                             Thread.sleep(1);
@@ -91,14 +88,18 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
     }
+    // 잘못 눌렀을 경우
 
     // 버튼 이벤트
     public void onClickButton(View v){
         int clickBtnID = v.getId();
-        int refButton = R.id.btn1;
+        int refButton = this.colorBtns[0].getId();
 
         if(clickBtnID - refButton != 0) wrongClick();
-        else Toast.makeText(getApplicationContext(), "맞았습니다.", Toast.LENGTH_SHORT).show();
+        else {
+            initColor();
+            Toast.makeText(getApplicationContext(), "맞았습니다.", Toast.LENGTH_SHORT).show();
+        }
     }
     // 버튼 이벤트
 }
